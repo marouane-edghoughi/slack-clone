@@ -45,7 +45,7 @@ function Sidebar() {
       <SidebarContainer>
         <SidebarHeader>
           <SidebarInfo>
-            <h2>Papa Fam HQ</h2>
+            <h2>Slack</h2>
             <h3>
               <OnlineStatusIcon />
               Marouane Edghoughi
