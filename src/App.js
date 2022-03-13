@@ -11,6 +11,7 @@ import { auth } from './firebase';
 
 import styled from 'styled-components';
 
+import SplashScreen from './components/SplashScreen/SplashScreen';
 import Login from './components/Login/Login';
 
 import Header from './components/Header/Header';
@@ -22,9 +23,15 @@ function App() {
 
   const [user, loading] = useAuthState(auth);
 
+  if (loading) {
+    return (
+      <SplashScreen />
+    );
+  }
+
   return (
     <Router>
-      {user ? (
+      {!user ? (
           <Login />
         ) : (
           <>
