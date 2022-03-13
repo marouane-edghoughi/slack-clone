@@ -21,14 +21,6 @@ export const HeaderLeft = styled.div`
     margin-left: 20px;
 `;
 
-export const Avatar = styled.span`
-    cursor: pointer;
-
-    :hover {
-        opacity: 0.8;
-    }
-`;
-
 export const ClockIcon = styled(BiTimeFive)`
     margin-left: auto;
     margin-right: 20px;

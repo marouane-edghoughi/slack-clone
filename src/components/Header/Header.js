@@ -6,21 +6,19 @@ import { FiHelpCircle } from 'react-icons/fi';
 import {
   HeaderContainer,
   HeaderLeft,
-  Avatar,
   ClockIcon,
   Searchbar,
   HeaderRight
 } from './Header.styled';
+
+import Avatar from '../Avatar/Avatar';
 
 function Header() {
   return (
       <HeaderContainer>
         {/* Header Left */}
         <HeaderLeft>
-          <Avatar>
-            {/* // TODO: Add onClick */}
-            M
-          </Avatar>
+          <Avatar />
           <ClockIcon />
         </HeaderLeft>
         {/* Header Center / Search bar */}

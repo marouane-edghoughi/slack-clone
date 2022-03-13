@@ -43,5 +43,4 @@ export const SignInButton = styled.button`
     border: none;
     border-radius: 5px;
     cursor: pointer;
-
 `;

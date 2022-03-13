@@ -50,7 +50,6 @@ function Sidebar() {
             <h3>
               <OnlineStatusIcon />
               {user?.displayName}
-              {user?.photoURL}
             </h3>
             <CreateIcon />
           </SidebarInfo>
