@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { collection } from 'firebase/firestore';
-import { db } from '../../firebase';
+import { auth, db } from '../../firebase';
 
 import { 
   MdInsertComment,
@@ -27,8 +27,11 @@ import {
 } from './Sidebar.styled';
 
 import SidebarOption from './SidebarOption';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 function Sidebar() {
+
+  const [user] = useAuthState(auth);
 
   const [channels, loading, error] = useCollection(
     collection(db, 'rooms'),
@@ -36,8 +39,6 @@ function Sidebar() {
       snapshotListenOptions: { includeMetadataChanges: true },
     }
   );
-
-  console.log(channels);
 
   return (
     <>
@@ -48,7 +49,8 @@ function Sidebar() {
             <h2>Slack</h2>
             <h3>
               <OnlineStatusIcon />
-              Marouane Edghoughi
+              {user?.displayName}
+              {user?.photoURL}
             </h3>
             <CreateIcon />
           </SidebarInfo>

@@ -45,6 +45,45 @@ export const DetailsIcon = styled(AiOutlineInfoCircle)`
 `;
 
 export const ChatMessages = styled.div`
+    padding: 0 20px;
+`;
+
+export const ChatBottom = styled.div`
+    height: 100px;
+`;
+
+// Messages
+
+export const MessageContainer = styled.div`
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+`;
+
+export const UserImage = styled.img`
+    width: 50px;
+    height: auto;
+    border-radius: 10px;
+    pointer-events: none;
+`;
+
+export const MessageData = styled.div`
+    display: inline;
+    margin-left: 10px;
+`;
+
+export const UserName = styled.h4`
+
+`;
+
+export const MessageDate = styled.p`
+    color: gray;
+    margin-left: 4px;
+    font-size: 10px;
+    font-weight: 300;
+`;
+
+export const MessageText = styled.p`
 
 `;
 

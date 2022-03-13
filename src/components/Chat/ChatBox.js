@@ -8,7 +8,7 @@ import {
     ChatBoxContainer,
 } from './Chat.styled';
 
-function ChatBox({channelName, channelId}) {
+function ChatBox({channelName, channelId, chatRef}) {
 
     const [msg, setMsg] = useState('');
 
@@ -25,7 +25,11 @@ function ChatBox({channelName, channelId}) {
             message: msg,
             timestamp: serverTimestamp(),
             user: 'Marouane Edghoughi',
+            userImage: 'https://firebasestorage.googleapis.com/v0/b/portfolio-d231d.appspot.com/o/photo.jpg?alt=media&token=cc71e48a-7acd-4b8a-b2ed-dd98e915ccec'
         }).then(() => {
+            chatRef.current.scrollIntoView({
+                behavior: 'smooth'
+            });
             setMsg('');
         }).catch((err) => {
             console.log(err);
@@ -36,7 +40,7 @@ function ChatBox({channelName, channelId}) {
         <ChatBoxContainer>
             <form>
                 <input
-                    placeholder={'Message #Room'}
+                    placeholder={'Type message to ' + channelName}
                     value={msg}
                     onChange={(e) => setMsg(e.target.value)}
                 />
