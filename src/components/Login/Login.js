@@ -7,6 +7,8 @@ import {
     Wrapper,
     LoginContainer,
     SlackLogo,
+    SignInText,
+    Copyrights,
     SignInButton
 } from './Login.styled';
 
@@ -23,8 +25,14 @@ function Login() {
         <Wrapper>
             <LoginContainer>
                 <SlackLogo
-                    src='https://firebasestorage.googleapis.com/v0/b/slack-clone-2022.appspot.com/o/slack-icon.svg?alt=media&token=a8c45fc7-204f-452f-8386-71d3c0e96095'
+                    src='https://firebasestorage.googleapis.com/v0/b/slack-clone-2022.appspot.com/o/images%2Fslack-icon.svg?alt=media&token=50ec4c78-dfff-4b44-8886-0dbfb677009d'
                 />
+                <SignInText>
+                    Sign in to Slack Clone
+                </SignInText>
+                <Copyrights>
+                    &copy; powered by Marouane Edghoughi.
+                </Copyrights>
                 <SignInButton
                     onClick={signIn}
                 >
@@ -35,4 +43,4 @@ function Login() {
     )
 }
 
-export default Login
+export default Login;

@@ -13,6 +13,7 @@ export const LoginContainer = styled.div`
     display: flex;
     flex-direction: column;
     padding: 100px;
+    text-align: center;
     background-color: #ffffff;
     border-radius: 5px;
     border: 1px solid lightgray;
@@ -34,6 +35,15 @@ export const SlackLogo = styled.img`
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+`;
+
+export const SignInText = styled.h2`
+    margin-bottom: 5px;
+`;
+
+export const Copyrights = styled.p`
+    font-size: 12px;
+    margin-bottom: 20px;
 `;
 
 export const SignInButton = styled.button`

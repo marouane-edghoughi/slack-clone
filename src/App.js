@@ -24,7 +24,7 @@ function App() {
 
   return (
     <Router>
-      {!user ? (
+      {user ? (
           <Login />
         ) : (
           <>
