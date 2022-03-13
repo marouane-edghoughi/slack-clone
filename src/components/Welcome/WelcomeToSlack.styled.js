@@ -20,8 +20,8 @@ export const WelcomeContainer = styled.div`
 export const SlackLogo = styled.img`
     width: 300px;
     height: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     pointer-events: none;
     -webkit-user-drag: none;
     -webkit-touch-callout: none; /* iOS Safari */
