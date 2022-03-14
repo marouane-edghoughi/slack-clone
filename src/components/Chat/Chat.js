@@ -24,7 +24,7 @@ import {
 import Message from './Message';
 
 import ChatBox from './ChatBox';
-import { collection, doc, orderBy } from 'firebase/firestore';
+import { collection, doc, orderBy, query } from 'firebase/firestore';
 import { db } from '../../firebase';
 
 function Chat() {
@@ -40,16 +40,11 @@ function Chat() {
         }
     );
 
-    // TODO: Fix messages not being in order by timestamp
-
-    const queryMessages = collection(db, 'rooms', roomId, 'messages', orderBy('timestamp', 'asc'));
-
     const [roomMessages, loading] = useCollection(
         roomId &&
-            queryMessages,
-            {
-              snapshotListenOptions: { includeMetadataChanges: true },
-            }
+            query(
+                collection(db, 'rooms', roomId, 'messages'), orderBy('timestamp', 'asc') 
+            )
     );
     
 
