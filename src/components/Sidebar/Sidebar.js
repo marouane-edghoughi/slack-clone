@@ -21,9 +21,10 @@ import {
   SidebarContainer,  
   SidebarHeader,
   SidebarInfo,
+  AppInfo,
   OnlineStatusIcon,
-  CreateIcon,
-
+  CreateContainer,
+  CreateIcon
 } from './Sidebar.styled';
 
 import SidebarOption from './SidebarOption';
@@ -46,12 +47,16 @@ function Sidebar() {
       <SidebarContainer>
         <SidebarHeader>
           <SidebarInfo>
-            <h2>Slack</h2>
-            <h3>
-              <OnlineStatusIcon />
-              {user?.displayName}
-            </h3>
-            <CreateIcon />
+            <AppInfo>
+              <h2>Slack</h2>
+              <h3>
+                <OnlineStatusIcon />
+                {user?.displayName}
+              </h3>
+            </AppInfo>
+            <CreateContainer>
+              <CreateIcon />
+            </CreateContainer>
           </SidebarInfo>
         </SidebarHeader>
 

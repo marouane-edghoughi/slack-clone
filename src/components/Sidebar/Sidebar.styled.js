@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { GrStatusGoodSmall } from 'react-icons/gr';
-import { FiEdit2 } from 'react-icons/fi';
+import { IoMdCreate } from 'react-icons/io';
 
 export const SidebarContainer = styled.div`
     flex: 0.3;
@@ -26,6 +26,15 @@ export const SidebarHeader = styled.div`
 
 export const SidebarInfo = styled.div`
     display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+export const AppInfo = styled.div`
+    display: flex;
+    flex-direction: column;
 
     > h2 {
         font-size: 15px;
@@ -34,7 +43,6 @@ export const SidebarInfo = styled.div`
     }
 
     > h3 {
-        display: flex;
         font-size: 13px;
         font-weight: 400;
         align-items: center;
@@ -48,12 +56,18 @@ export const OnlineStatusIcon = styled(GrStatusGoodSmall)`
     color: green;
 `;
 
-export const CreateIcon = styled(FiEdit2)`
+export const CreateContainer = styled.div`
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
     padding: 8px;
     border-radius: 50%;
-    font-size: 18px;
     color: #49274b;
     background-color: white;
+`;
+
+export const CreateIcon = styled(IoMdCreate)`
+    font-size: 18px;
 `;
 
 export const SidebarOptionContainer = styled.div`
