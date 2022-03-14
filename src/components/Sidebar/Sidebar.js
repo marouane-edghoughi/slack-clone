@@ -24,7 +24,8 @@ import {
   AppInfo,
   OnlineStatusIcon,
   CreateContainer,
-  CreateIcon
+  CreateIcon,
+  SidebarOptions
 } from './Sidebar.styled';
 
 import SidebarOption from './SidebarOption';
@@ -60,26 +61,28 @@ function Sidebar() {
           </SidebarInfo>
         </SidebarHeader>
 
-        <SidebarOption Icon={MdInsertComment} title='Threads' />
-        <SidebarOption Icon={MdNotifications} title='Mentions & Reactions' />
-        <SidebarOption Icon={MdSave} title='Saved items' />
-        <SidebarOption Icon={FiBookmark} title='Channel browser' />
-        <SidebarOption Icon={FaUsers} title='People & user groups' />
-        <SidebarOption Icon={MdApps} title='Apps' />
-        <SidebarOption Icon={MdInsertDriveFile} title='File browser' />
-        <SidebarOption Icon={MdOutlineKeyboardArrowUp} title='Show less' />
-        <hr />
-        <SidebarOption Icon={MdOutlineKeyboardArrowDown} title='Channels' />
-        <hr />
-        <SidebarOption Icon={MdAdd} addChannelOption title='Add Channel' />
+        <SidebarOptions>
+          <SidebarOption Icon={MdInsertComment} title='Threads' />
+          <SidebarOption Icon={MdNotifications} title='Mentions & Reactions' />
+          <SidebarOption Icon={MdSave} title='Saved items' />
+          <SidebarOption Icon={FiBookmark} title='Channel browser' />
+          <SidebarOption Icon={FaUsers} title='People & user groups' />
+          <SidebarOption Icon={MdApps} title='Apps' />
+          <SidebarOption Icon={MdInsertDriveFile} title='File browser' />
+          <SidebarOption Icon={MdOutlineKeyboardArrowUp} title='Show less' />
+          <hr />
+          <SidebarOption Icon={MdOutlineKeyboardArrowDown} title='Channels' />
+          <hr />
+          <SidebarOption Icon={MdAdd} addChannelOption title='Add Channel' />
 
-        {channels?.docs.map(channel => (
-          <SidebarOption
-            key={channel.id}
-            id={channel.id}
-            title={channel.data().name}
-          />
-        ))}
+          {channels?.docs.map(channel => (
+            <SidebarOption
+              key={channel.id}
+              id={channel.id}
+              title={channel.data().name}
+            />
+          ))}
+        </SidebarOptions>
       </SidebarContainer>
     </>
   )

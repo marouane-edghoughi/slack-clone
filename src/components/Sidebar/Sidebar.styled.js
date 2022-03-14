@@ -4,22 +4,18 @@ import { GrStatusGoodSmall } from 'react-icons/gr';
 import { IoMdCreate } from 'react-icons/io';
 
 export const SidebarContainer = styled.div`
+    position: relative;
     flex: 0.3;
     color: white;
     background-color: var(--slack-purple);
     border-top: 1px solid #49274b;
     max-width: 260px;
     margin-top: 40px;
-
-    > hr {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        border: 1px solid #49274b;
-    }
 `;
 
 export const SidebarHeader = styled.div`
     display: flex;
+    height: 50px;
     border-bottom: 1px solid #49274b;
     padding: 13px;
 `;
@@ -59,7 +55,6 @@ export const OnlineStatusIcon = styled(GrStatusGoodSmall)`
 export const CreateContainer = styled.div`
     display: flex;
     align-items: center;
-    align-self: flex-end;
     padding: 8px;
     border-radius: 50%;
     color: #49274b;
@@ -68,6 +63,18 @@ export const CreateContainer = styled.div`
 
 export const CreateIcon = styled(IoMdCreate)`
     font-size: 18px;
+`;
+
+export const SidebarOptions = styled.div`
+    position: relative;
+    height: calc(100% - 75px);
+    overflow-y: auto;
+
+    > hr {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #49274b;
+    }
 `;
 
 export const SidebarOptionContainer = styled.div`
