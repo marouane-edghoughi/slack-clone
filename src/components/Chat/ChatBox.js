@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 
-import { addDoc, collection, doc, serverTimestamp, setDoc } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 
-import { db } from '../../firebase';
+import { auth, db } from '../../firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 import {
     ChatBoxContainer,
 } from './Chat.styled';
 
 function ChatBox({channelName, channelId, chatRef}) {
+
+    const [user] = useAuthState(auth);
 
     const [msg, setMsg] = useState('');
 
@@ -24,8 +27,8 @@ function ChatBox({channelName, channelId, chatRef}) {
         addDoc(collection(db, 'rooms', channelId, 'messages'), {
             message: msg,
             timestamp: serverTimestamp(),
-            user: 'Marouane Edghoughi',
-            userImage: 'https://firebasestorage.googleapis.com/v0/b/portfolio-d231d.appspot.com/o/photo.jpg?alt=media&token=cc71e48a-7acd-4b8a-b2ed-dd98e915ccec'
+            user: user.displayName,
+            userImage: user?.photoURL
         }).then(() => {
             chatRef.current.scrollIntoView({
                 behavior: 'smooth'
