@@ -40,13 +40,18 @@ function Chat() {
         }
     );
 
+    // TODO: Fix messages not being in order by timestamp
+
+    const queryMessages = collection(db, 'rooms', roomId, 'messages', orderBy('timestamp', 'asc'));
+
     const [roomMessages, loading] = useCollection(
         roomId &&
-            collection(db, 'rooms', roomId, 'messages'),
+            queryMessages,
             {
               snapshotListenOptions: { includeMetadataChanges: true },
             }
     );
+    
 
     useEffect(() => {
         chatRef?.current?.scrollIntoView({
